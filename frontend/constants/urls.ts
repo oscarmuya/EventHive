@@ -1,0 +1,8 @@
+const BACKEND_USER_SERVICE = "http://localhost:8000";
+
+const REGISTER_URL = BACKEND_USER_SERVICE + "/register/";
+const REFRESH_TOKEN_URL = BACKEND_USER_SERVICE + "/token/refresh/";
+const LOGIN_URL = BACKEND_USER_SERVICE + "/token/";
+const VERIFY_TOKEN_URL = BACKEND_USER_SERVICE + "/token/verify/";
+
+export { REGISTER_URL, REFRESH_TOKEN_URL, LOGIN_URL, VERIFY_TOKEN_URL };

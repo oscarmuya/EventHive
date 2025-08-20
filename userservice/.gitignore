@@ -1,0 +1,90 @@
+# -----------------------------------------
+# Python
+# -----------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtualenv
+venv/
+.env/
+ENV/
+.venv/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# -----------------------------------------
+# Django
+# -----------------------------------------
+*.log
+*.pot
+*.pyc
+*.mo
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# If using collectstatic
+/static/
+!/static/.keep
+
+# Local development
+local_settings.py
+
+# -----------------------------------------
+# IDEs & Editors
+# -----------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -----------------------------------------
+# OS Files
+# -----------------------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------------------
+# Environment & Secrets
+# -----------------------------------------
+.env
+.env.*
+*.secret
+secrets.json
+
+# -----------------------------------------
+# Coverage & Testing
+# -----------------------------------------
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+.tox/
+.mypy_cache/
+
+
+# -----------------------------------------
+# Keys
+# -----------------------------------------
+*.key
+*.pub
+
+keys/*.key
+keys/*.pub
