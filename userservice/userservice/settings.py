@@ -130,7 +130,7 @@ SIMPLE_JWT = {
     "ISSUER": "http://localhost:8000",
     "AUDIENCE": ["http://localhost:8000", "http://localhost:8001"],
     "ACCESS_TOKEN_LIFETIME": timedelta(
-        minutes=config("JWT_ACCESS_TOKEN_LIFETIME", default=5, cast=int)
+        minutes=config("JWT_ACCESS_TOKEN_LIFETIME", default=15, cast=int)
     ),
     "REFRESH_TOKEN_LIFETIME": timedelta(
         minutes=config("JWT_REFRESH_TOKEN_LIFETIME", default=1440, cast=int)

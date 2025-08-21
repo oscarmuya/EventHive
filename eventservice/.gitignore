@@ -88,3 +88,5 @@ htmlcov/
 
 keys/*.key
 keys/*.pub
+
+*json
