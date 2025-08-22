@@ -128,7 +128,12 @@ SIMPLE_JWT = {
     "SIGNING_KEY": PRIVATE_KEY,
     "VERIFYING_KEY": PUBLIC_KEY,
     "ISSUER": "http://localhost:8000",
-    "AUDIENCE": ["http://localhost:8000", "http://localhost:8001"],
+   "AUDIENCE": [
+        "http://localhost:8000",
+        "http://localhost:8001",
+        "http://localhost:8002",
+        "http://localhost:8003",
+    ],
     "ACCESS_TOKEN_LIFETIME": timedelta(
         minutes=config("JWT_ACCESS_TOKEN_LIFETIME", default=15, cast=int)
     ),

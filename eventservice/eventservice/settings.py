@@ -153,6 +153,11 @@ DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="webmaster@localhost")
 # Caching (Redis Example)
 # ---------------------------------------------------------
 REDIS_URL = config("REDIS_URL", default="")
+REDIS_HOST = config("REDIS_HOST", default="")
+REDIS_PORT = config("REDIS_PORT", default="")
+REDIS_PASSWORD = config("REDIS_PASSWORD", default="")
+REDIS_DB = config("REDIS_DB", default="")
+REDIS_USERNAME = config("REDIS_USERNAME", default="")
 
 
 # ---------------------------------------------------------
@@ -161,3 +166,12 @@ REDIS_URL = config("REDIS_URL", default="")
 CORS_ALLOWED_ORIGINS = config(
     "CORS_ALLOWED_ORIGINS", default="http://localhost:3000", cast=Csv()
 )
+
+
+# Internal service communication settings
+INTERNAL_SERVICE_IPS = [
+    "10.0.1.100",  # Event service IP
+    "10.0.1.101",  # Other microservice IPs
+    "127.0.0.1",  # For local development
+    "localhost",  # For local development
+]

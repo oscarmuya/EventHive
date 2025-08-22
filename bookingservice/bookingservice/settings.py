@@ -117,18 +117,20 @@ REST_FRAMEWORK = {
 # SimpleJWT (values from .env if you want to override defaults)
 from datetime import timedelta
 
-with open("keys/jwtRS256.key", "r") as f:
-    PRIVATE_KEY = f.read()
 
 with open("keys/jwtRS256.key.pub", "r") as f:
     PUBLIC_KEY = f.read()
 
 SIMPLE_JWT = {
     "ALGORITHM": "RS256",
-    "SIGNING_KEY": PRIVATE_KEY,
     "VERIFYING_KEY": PUBLIC_KEY,
     "ISSUER": "http://localhost:8000",
-    "AUDIENCE": ["http://localhost:8000", "http://localhost:8001"],
+    "AUDIENCE": [
+        "http://localhost:8000",
+        "http://localhost:8001",
+        "http://localhost:8002",
+        "http://localhost:8003",
+    ],
     "ACCESS_TOKEN_LIFETIME": timedelta(
         minutes=config("JWT_ACCESS_TOKEN_LIFETIME", default=5, cast=int)
     ),
@@ -156,7 +158,11 @@ DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="webmaster@localhost")
 # Caching (Redis Example)
 # ---------------------------------------------------------
 REDIS_URL = config("REDIS_URL", default="")
-
+REDIS_HOST = config("REDIS_HOST", default="")
+REDIS_PORT = config("REDIS_PORT", default="")
+REDIS_PASSWORD = config("REDIS_PASSWORD", default="")
+REDIS_DB = config("REDIS_DB", default="")
+REDIS_USERNAME = config("REDIS_USERNAME", default="")
 
 # ---------------------------------------------------------
 # CORS (Cross-Origin Resource Sharing)
@@ -164,3 +170,12 @@ REDIS_URL = config("REDIS_URL", default="")
 CORS_ALLOWED_ORIGINS = config(
     "CORS_ALLOWED_ORIGINS", default="http://localhost:3000", cast=Csv()
 )
+
+
+SERVICE_URLS = {
+    "EVENT_SERVICE_URL": config("EVENT_SERVICE_URL", default="http://localhost:8001"),
+    "USER_SERVICE_URL": config("USER_SERVICE_URL", default="http://localhost:8000"),
+    "PAYMENT_SERVICE_URL": config(
+        "PAYMENT_SERVICE_URL", default="http://localhost:8003"
+    ),
+}
